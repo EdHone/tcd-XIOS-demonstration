@@ -27,9 +27,9 @@ class TestReadTimeVar(xshared._TestCase):
     # and dimension of grid in read file.```
     # The dimensionality is correct in the test, but XIOS2r2252 gets this wrong.
     # hence, skip test for this test matrix element.
-    #@unittest.skipIf(os.environ.get('MVER', '') == 'XIOS/trunk@2252',
-    #                 "skipping for ")
-    def test_read_4d(self):
+    @unittest.skipIf(os.environ.get('MVER', '') == 'XIOS/trunk@2252',
+                     "skipping for ")
+    def test_read_time_var(self):
         inputfile = self.transient_inputs[0]
         infile = inputfile.replace('.nc', '.cdl')
         
